@@ -35,6 +35,11 @@ class TestCase(unittest.TestCase):
         self.assertEqual(check_pwd(input), expected)
 
     """ Rule 2: Must contain at least one lowercase letter (standard English alphabet) """
+    def test5(self):
+        """ Boundary case: 8 characters, all uppercase letter """
+        input = 'ASDFGHJK'
+        expected = False
+        self.assertEqual(check_pwd(input), expected)
 
 if __name__ == '__main__':
     unittest.main()
