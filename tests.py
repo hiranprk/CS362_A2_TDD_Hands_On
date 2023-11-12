@@ -80,6 +80,12 @@ class TestCase(unittest.TestCase):
         expected = False
         self.assertEqual(check_pwd(input), expected)
 
+    def test12(self):
+        """all correct but too long"""
+        input = '$(#*asdf-1DFJSDF39;k)'
+        expected = False
+        self.assertEqual(check_pwd(input), expected)
+
 
 if __name__ == '__main__':
     unittest.main()
