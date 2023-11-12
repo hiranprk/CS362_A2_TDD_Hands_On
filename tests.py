@@ -22,6 +22,12 @@ class TestCase(unittest.TestCase):
         expected = True
         self.assertEqual(check_pwd(input), expected)
 
+    def test3(self):
+        """ Boundary case: 20 characters """
+        input = 'asdfghjklqwertyuiopz'
+        expected = True
+        self.assertEqual(check_pwd(input), expected)
+
 
 if __name__ == '__main__':
     unittest.main()
