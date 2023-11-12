@@ -12,7 +12,7 @@ class TestCase(unittest.TestCase):
     """ Rule 1: Must be between 8 and 20 characters (inclusive) """
     def test1(self):
         """ Boundary case: 7 characters """
-        input = 'aldjfldi'
+        input = 'aldjfld'
         expected = False
         self.assertEqual(check_pwd(input), expected)
 

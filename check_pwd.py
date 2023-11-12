@@ -4,4 +4,7 @@
 # 12 November 2023
 
 def check_pwd(pwd):
-    return False
+    if len(pwd) >= 8:
+        return True
+    else:
+        return False
