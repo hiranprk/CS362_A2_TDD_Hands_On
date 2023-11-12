@@ -19,13 +19,13 @@ class TestCase(unittest.TestCase):
     def test2(self):
         """ Boundary case: 8 characters """
         input = 'adleiwpd'
-        expected = True
+        expected = False
         self.assertEqual(check_pwd(input), expected)
 
     def test3(self):
         """ Boundary case: 20 characters """
         input = 'asdfghjklqwertyuiopz'
-        expected = True
+        expected = False
         self.assertEqual(check_pwd(input), expected)
 
     def test4(self):
@@ -44,6 +44,13 @@ class TestCase(unittest.TestCase):
     def test6(self):
         """ Boundary case: 8 characters, 1 lowercase letter """
         input = 'aSDFGHJK'
+        expected = True
+        self.assertEqual(check_pwd(input), expected)
+
+    """ Rule 3: Must contain at least one uppercase letter (standard English alphabet) """
+    def test7(self):
+        """1 uppercase letter"""
+        input = 'Asdfghjk'
         expected = True
         self.assertEqual(check_pwd(input), expected)
 
