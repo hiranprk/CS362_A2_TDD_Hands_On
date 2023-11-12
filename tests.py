@@ -34,6 +34,7 @@ class TestCase(unittest.TestCase):
         expected = False
         self.assertEqual(check_pwd(input), expected)
 
+    """ Rule 2: Must contain at least one lowercase letter (standard English alphabet) """
 
 if __name__ == '__main__':
     unittest.main()
