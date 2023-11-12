@@ -8,6 +8,7 @@ def check_pwd(pwd):
     lower = "abcdefghijklmnopqrstuvwxyz"
     upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     digit = "0123456789"
+    symbol = "~`!@#$%^&*()_+-="
 
     """ rule 1: Must be between 8 and 20 characters (inclusive) """
     if len(pwd) < 8 or len(pwd) > 20:
@@ -16,6 +17,7 @@ def check_pwd(pwd):
     lowercase_n = 0
     uppercase_n = 0
     digit_n = 0
+    symbol_n = 0
     for i in pwd:
         if i in lower:
             lowercase_n += 1
@@ -23,6 +25,8 @@ def check_pwd(pwd):
             uppercase_n += 1
         elif i in digit:
             digit_n += 1
+        elif i in symbol:
+            symbol_n += 1
 
     """ rule 2: Must contain at least one lowercase letter (standard English alphabet) """
     if lowercase_n <= 0:
@@ -34,6 +38,10 @@ def check_pwd(pwd):
 
     """ Rule 4: Must contain at least one digit """
     if digit_n <= 0:
+        return False
+
+    """ Rule 5: Must contain at least one symbol """
+    if symbol_n <= 0:
         return False
 
     else:
