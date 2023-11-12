@@ -58,6 +58,13 @@ class TestCase(unittest.TestCase):
     def test8(self):
         """1 digit, 1 upper, 1 lower"""
         input = '1Asdfghj'
+        expected = False
+        self.assertEqual(check_pwd(input), expected)
+
+    """ Rule 5: Must contain at least one symbol """
+    def test9(self):
+        """1 symbol, 1 digit, 1 upper, 1 lower"""
+        input = '$1Asdfgh'
         expected = True
         self.assertEqual(check_pwd(input), expected)
 
