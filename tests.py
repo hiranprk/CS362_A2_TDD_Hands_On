@@ -68,6 +68,12 @@ class TestCase(unittest.TestCase):
         expected = True
         self.assertEqual(check_pwd(input), expected)
 
+    def test10(self):
+        """3 symbol, 3 digit, 3 upper"""
+        input = "$&#123DLK"
+        expected = False
+        self.assertEqual(check_pwd(input), expected)
+
 
 if __name__ == '__main__':
     unittest.main()
